@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <span>
+    <h1>
+      Branden Vennes's DevBlog
+    </h1>
+  </span>
+
+  <span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" color="accent">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <span>Resume</span>
+      </button>
+      <button mat-menu-item>
+        <span>About</span>
+      </button>
+    </mat-menu>  
+  </span>
+</mat-toolbar>
