@@ -1,4 +1,6 @@
-# DevBlogFrontend
+# Developer Blog Frontend
+
+This project is the frontend for my developer blog site, although, I think it is generic enough that anyone could combine the code from this repository and my [Developer Blog Backend](https://github.com/b-vennes/developer-blog-backend) repository to build their own blogs.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
 
