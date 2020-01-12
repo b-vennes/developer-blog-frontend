@@ -1,1 +1,15 @@
-<p>home works!</p>
+<div *ngFor="let overview of articleOverviews">
+
+    <h2 class="medium-header">Recent</h2>
+
+    <mat-card class="overview-card mat-elvation-z20" routerLink="/article/{{overview.id}}">
+        <mat-card-header>
+            <mat-card-title>
+                <h3>
+                    {{overview.title}}
+                </h3>
+            </mat-card-title>
+            <mat-card-subtitle>{{overview.publishedDate | date}}</mat-card-subtitle>
+        </mat-card-header>
+    </mat-card>
+</div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ContentDataDto } from '../_dtos/content-data.dto';
+import { ArticleContent } from '../_models/article-content.model';
 
 @Component({
   selector: 'app-article',
@@ -8,16 +10,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ArticleComponent implements OnInit {
 
-  public articleData = '<h1>test title</h1>';
-  public id: string;
+  public articleContent: ArticleContent;
 
-  constructor(private route: ActivatedRoute) {
-    this.route.paramMap.subscribe(m => {
-      this.id = m.get('id');
-    });
-  }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
+    this.articleContent = this.route.snapshot.data.contentData;
   }
-
 }

@@ -4,22 +4,33 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-
+import { MatCardModule } from '@angular/material/card';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { NavigatorComponent } from './navigator/navigator.component';
-import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Routes, RouterModule } from '@angular/router';
 import { ContentDisplayComponent } from './content-display/content-display.component';
 import { ArticleComponent } from './article/article.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ArticleContentResolver } from './_resolvers/article-content.resolver';
+import { ContentService } from './_services/content.service';
+import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
+import { ResumeComponent } from './resume/resume.component';
+import { HomeContentOverviewsResolver } from './_resolvers/home-content-overviews.resolver';
 
 const appRoutes: Routes = [
    { path: 'about', component: AboutComponent },
-   { path: 'article/:id', component: ArticleComponent },
-   { path: 'home', component: HomeComponent },
+   {
+      path: 'article/:id',
+      component: ArticleComponent,
+      resolve: { contentData: ArticleContentResolver }
+   },
+   { path: 'home', component: HomeComponent, resolve: { overviews: HomeContentOverviewsResolver } },
+   { path: 'resume', component: ResumeComponent },
    {
       path: '',
       redirectTo: '/home',
@@ -34,7 +45,8 @@ const appRoutes: Routes = [
       ArticleComponent,
       NavigatorComponent,
       AboutComponent,
-      ContentDisplayComponent
+      ContentDisplayComponent,
+      ResumeComponent
    ],
    imports: [
       BrowserModule,
@@ -44,9 +56,16 @@ const appRoutes: Routes = [
       MatMenuModule,
       MatIconModule,
       MatButtonModule,
-      RouterModule.forRoot(appRoutes)
+      MatCardModule,
+      MatSidenavModule,
+      RouterModule.forRoot(appRoutes),
+      HttpClientModule
    ],
-   providers: [],
+   providers: [
+      ContentService,
+      ArticleContentResolver,
+      HomeContentOverviewsResolver
+   ],
    bootstrap: [
       AppComponent
    ]
