@@ -6,6 +6,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatRippleModule } from '@angular/material/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,22 +23,6 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
 import { HomeContentOverviewsResolver } from './_resolvers/home-content-overviews.resolver';
-
-const appRoutes: Routes = [
-   { path: 'about', component: AboutComponent },
-   {
-      path: 'article/:id',
-      component: ArticleComponent,
-      resolve: { contentData: ArticleContentResolver }
-   },
-   { path: 'home', component: HomeComponent, resolve: { overviews: HomeContentOverviewsResolver } },
-   { path: 'resume', component: ResumeComponent },
-   {
-      path: '',
-      redirectTo: '/home',
-      pathMatch: 'full'
-   }
- ];
 
 @NgModule({
    declarations: [
@@ -58,7 +44,8 @@ const appRoutes: Routes = [
       MatButtonModule,
       MatCardModule,
       MatSidenavModule,
-      RouterModule.forRoot(appRoutes),
+      MatDividerModule,
+      MatRippleModule,
       HttpClientModule
    ],
    providers: [

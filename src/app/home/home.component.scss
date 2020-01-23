@@ -1,9 +1,21 @@
 .overview-card {
-    max-width: 500px;
     cursor: pointer;
-    margin-left: 1px;
+    font-family: 'Inconsolata', monospace;
+
+    .overview-title {
+        font-family: 'Merriweather', serif;
+        text-shadow: 2px 2px black;
+    }
 }
 
 .medium-header {
-    margin-left: 30px;
+    margin-left: 10%;
+    font-family: 'Inconsolata', monospace;
+}
+
+.overviews-grid {
+    display: grid;
+    gap: 20px 20px;
+    grid-template-columns: 50%;
+    margin-left: 8%;
 }
