@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { ContentService } from '../_services/content.service';
-import { ContentDataDto } from '../_dtos/content-data.dto';
 import { ArticleContent } from '../_models/article-content.model';
 
 @Injectable()
@@ -20,6 +19,8 @@ export class ArticleContentResolver implements Resolve<ArticleContent> {
 
                     articleContent.id = c.id;
                     articleContent.title = c.title;
+                    articleContent.summary = c.summary;
+                    articleContent.imageUrl = c.imageUrl;
                     articleContent.data = c.data;
                     articleContent.publishedDate = c.publishedDate;
                     articleContent.updatedDate = c.updatedDate;

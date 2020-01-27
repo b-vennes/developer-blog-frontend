@@ -6,16 +6,25 @@
         font-family: 'Merriweather', serif;
         text-shadow: 2px 2px black;
     }
+
+    .overview-subtitle {
+        font-style: italic;
+    }
+
+    .overview-image {
+        object-fit: cover;
+        width: 100%;
+    }
 }
 
 .medium-header {
-    margin-left: 10%;
+    margin-left: 8%;
     font-family: 'Inconsolata', monospace;
 }
 
 .overviews-grid {
     display: grid;
     gap: 20px 20px;
-    grid-template-columns: 50%;
+    grid-template-columns: 40% 40%;
     margin-left: 8%;
 }

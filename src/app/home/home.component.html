@@ -2,14 +2,21 @@
 
 <div class="overviews-grid">
     <div *ngFor="let overview of articleOverviews">
-        <mat-card matRipple class="overview-card mat-elvation-z20" routerLink="/article/{{overview.id}}">
+        <mat-card matRipple class="overview-card mat-elvation-z20" routerLink="/article/{{overview.id}}" onclick="">
+            <img mat-card-lg-image class="overview-image" src="{{overview.imageUrl}}">
             <mat-card-header>
-                <mat-card-title>
-                    <h3 class="overview-title">
-                        {{overview.title}}
-                    </h3>
-                </mat-card-title>
-                <mat-card-subtitle>{{overview.publishedDate | date}}</mat-card-subtitle>
+                <mat-card-title-group>
+                    <mat-card-title class="overview-title">
+                        <h3>
+                            {{overview.title}}
+                        </h3>
+                    </mat-card-title>
+                    <mat-card-subtitle class="overview-subtitle">{{overview.summary}}</mat-card-subtitle>
+                    <mat-card-subtitle class="overview-dates">
+                        <span *ngIf="overview.publishedDate">Published: {{overview.publishedDate | date}}</span>
+                        <span *ngIf="overview.updatedDate">. Updated: {{overview.publishedDate | date}}</span>
+                    </mat-card-subtitle>
+                </mat-card-title-group>
             </mat-card-header>
         </mat-card>
     </div>
