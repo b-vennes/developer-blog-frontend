@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ContentOverviewDto } from '../_dtos/content-overview.dto';
 import { ArticleOverview } from '../_models/article-overview.model';
 
 @Component({
@@ -16,5 +15,4 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.articleOverviews = this.route.snapshot.data.overviews;
   }
-
 }

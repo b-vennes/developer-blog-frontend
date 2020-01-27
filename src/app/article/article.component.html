@@ -1,2 +1,21 @@
+<div class="article-header">
+    <img class="article-banner" src="{{articleContent.imageUrl}}">
+
+    <h1 class="article-title">
+        {{articleContent.title}}
+    </h1>
+
+    <p class="article-subtitle">
+        {{articleContent.summary}}
+    </p>
+
+    <div class="article-dates">
+        <span *ngIf="articleContent.publishedDate">Published: {{articleContent.publishedDate | date}}</span>
+        <span *ngIf="articleContent.updatedDate">. Updated: {{articleContent.publishedDate | date}}</span>
+    </div>
+</div>
+
+<mat-divider class="article-divider" [inset]="true"></mat-divider>
+
 <app-content-display class="article-content" [contentData]="this.articleContent.data">
 </app-content-display>

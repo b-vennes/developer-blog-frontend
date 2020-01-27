@@ -19,7 +19,10 @@ export class HomeContentOverviewsResolver implements Resolve<Array<ContentOvervi
 
                         overview.id = c.id;
                         overview.title = c.title;
+                        overview.summary = c.summary;
+                        overview.imageUrl = c.imageUrl;
                         overview.publishedDate = c.publishedDate;
+                        overview.updatedDate = c.updatedDate;
 
                         return overview;
                     });
