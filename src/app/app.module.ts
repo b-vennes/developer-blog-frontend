@@ -23,6 +23,7 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
 import { HomeContentOverviewsResolver } from './_resolvers/home-content-overviews.resolver';
+import { AboutContentResolver } from './_resolvers/about-content.resolve';
 
 @NgModule({
    declarations: [
@@ -51,7 +52,8 @@ import { HomeContentOverviewsResolver } from './_resolvers/home-content-overview
    providers: [
       ContentService,
       ArticleContentResolver,
-      HomeContentOverviewsResolver
+      HomeContentOverviewsResolver,
+      AboutContentResolver
    ],
    bootstrap: [
       AppComponent

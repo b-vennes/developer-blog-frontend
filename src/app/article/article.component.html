@@ -1,6 +1,4 @@
 <div class="article-header">
-    <img class="article-banner" src="{{articleContent.imageUrl}}">
-
     <h1 class="article-title">
         {{articleContent.title}}
     </h1>
@@ -13,6 +11,8 @@
         <span *ngIf="articleContent.publishedDate">Published: {{articleContent.publishedDate | date}}</span>
         <span *ngIf="articleContent.updatedDate">. Updated: {{articleContent.publishedDate | date}}</span>
     </div>
+
+    <img class="article-banner" src="{{articleContent.imageUrl}}">
 </div>
 
 <mat-divider class="article-divider" [inset]="true"></mat-divider>

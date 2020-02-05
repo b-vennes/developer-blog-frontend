@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ArticleContent } from '../_models/article-content.model';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  public aboutContent: ArticleContent;
+
+  constructor(private route: ActivatedRoute ) { }
 
   ngOnInit() {
+    this.aboutContent = this.route.snapshot.data.contentData;
   }
 
 }
