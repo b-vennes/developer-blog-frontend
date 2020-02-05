@@ -14,18 +14,21 @@ export class HomeContentOverviewsResolver implements Resolve<Array<ContentOvervi
         return this.contentService.getContentOverviews()
             .pipe(
                 map(overviews => {
-                    return overviews.map(c => {
-                        const overview = new ArticleOverview();
+                    return overviews
+                        .filter(c => c.id !== 'about' && c.id !== 'resume')
+                        .map(c => {
+                            const overview = new ArticleOverview();
 
-                        overview.id = c.id;
-                        overview.title = c.title;
-                        overview.summary = c.summary;
-                        overview.imageUrl = c.imageUrl;
-                        overview.publishedDate = c.publishedDate;
-                        overview.updatedDate = c.updatedDate;
+                            overview.id = c.id;
+                            overview.title = c.title;
+                            overview.summary = c.summary;
+                            overview.imageUrl = c.imageUrl;
+                            overview.publishedDate = c.publishedDate;
+                            overview.updatedDate = c.updatedDate;
 
-                        return overview;
-                    });
+                            return overview;
+                        }
+                    );
                 })
             );
     }

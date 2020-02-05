@@ -6,13 +6,12 @@ import { ContentService } from '../_services/content.service';
 import { ArticleContent } from '../_models/article-content.model';
 
 @Injectable()
-export class ArticleContentResolver implements Resolve<ArticleContent> {
+export class AboutContentResolver implements Resolve<ArticleContent> {
 
     constructor(private contentService: ContentService) {}
 
-    resolve(route: ActivatedRouteSnapshot): Observable<ArticleContent> {
-        const contentId = route.paramMap.get('id');
-
+    resolve(): Observable<ArticleContent> {
+        const contentId = 'about';
         return this.contentService.getContentData(contentId)
             .pipe(
                 map(c => {
