@@ -1,3 +1,5 @@
+@import "../../theme.scss";
+
 .content {
     margin-left: 8%;
     margin-right: 8%;
@@ -10,7 +12,13 @@
     }
 
     a {
-        color: aqua;
+        color: $accent;
         text-decoration: none;
+    }
+
+    .toolbar {
+        button {
+            cursor: pointer;
+        }
     }
 }

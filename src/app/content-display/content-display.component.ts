@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, AfterViewChecked } from '@angular/core';
+import { SyntaxHighlightService } from '../_services/syntax-highlight.service';
 
 @Component({
   selector: 'app-content-display',
@@ -6,12 +7,21 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./content-display.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ContentDisplayComponent implements OnInit {
+export class ContentDisplayComponent implements OnInit, AfterViewChecked {
   @Input() contentData: string;
 
-  constructor() { }
+  highlighted = false;
+
+  constructor(private syntaxHighlightService: SyntaxHighlightService) { }
 
   ngOnInit() {
+  }
+
+  ngAfterViewChecked() {
+    if (!this.highlighted) {
+      this.syntaxHighlightService.highlightAll();
+      this.highlighted = true;
+    }
   }
 
 }

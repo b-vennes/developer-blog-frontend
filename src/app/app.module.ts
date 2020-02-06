@@ -24,6 +24,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { HomeContentOverviewsResolver } from './_resolvers/home-content-overviews.resolver';
 import { AboutContentResolver } from './_resolvers/about-content.resolve';
 import { ResumeContentResolver } from './_resolvers/resume-content.resolver';
+import { SyntaxHighlightService } from './_services/syntax-highlight.service';
 
 @NgModule({
    declarations: [
@@ -51,6 +52,7 @@ import { ResumeContentResolver } from './_resolvers/resume-content.resolver';
    ],
    providers: [
       ContentService,
+      SyntaxHighlightService,
       ArticleContentResolver,
       HomeContentOverviewsResolver,
       AboutContentResolver,
