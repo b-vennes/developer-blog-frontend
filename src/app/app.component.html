@@ -2,6 +2,8 @@
 
 <mat-sidenav-container class="page-container">
     <mat-sidenav-content>
-        <router-outlet></router-outlet>
+        <div [ngClass.gt-sm]="'page-content-large'" [ngClass.lt-md]="'page-content-small'">
+            <router-outlet></router-outlet>
+        </div>
     </mat-sidenav-content>
 </mat-sidenav-container>

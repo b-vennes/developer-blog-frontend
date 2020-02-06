@@ -3,10 +3,10 @@
         About Me
     </h1>
 
-    <img class="article-banner" src="{{aboutContent.imageUrl}}">
+    <img [ngClass.lt-md]="'article-banner-small'" [ngClass.gt-sm]="'article-banner-large'" src="{{aboutContent.imageUrl}}">
 </div>
 
-<mat-divider class="article-divider" [inset]="true"></mat-divider>
+<mat-divider class="article-divider"></mat-divider>
 
 <app-content-display class="article-content" [contentData]="this.aboutContent.data">
 </app-content-display>

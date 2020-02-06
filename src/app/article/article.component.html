@@ -12,10 +12,10 @@
         <span *ngIf="articleContent.updatedDate">. Updated: {{articleContent.publishedDate | date}}</span>
     </div>
 
-    <img class="article-banner" src="{{articleContent.imageUrl}}">
+    <img [ngClass.lt-md]="'article-banner-small'" [ngClass.gt-sm]="'article-banner-large'" src="{{articleContent.imageUrl}}">
 </div>
 
-<mat-divider class="article-divider" [inset]="true"></mat-divider>
+<mat-divider class="article-divider"></mat-divider>
 
 <app-content-display class="article-content" [contentData]="this.articleContent.data">
 </app-content-display>

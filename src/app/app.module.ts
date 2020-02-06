@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatRippleModule } from '@angular/material/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,6 +49,7 @@ import { SyntaxHighlightService } from './_services/syntax-highlight.service';
       MatSidenavModule,
       MatDividerModule,
       MatRippleModule,
+      FlexLayoutModule,
       HttpClientModule
    ],
    providers: [

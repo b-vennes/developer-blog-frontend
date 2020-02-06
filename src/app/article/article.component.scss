@@ -1,11 +1,16 @@
 .article-header {
-    margin-left: 8%;
-    margin-right: 8%;
 
     font-family: 'Inconsolata', monospace;
 
-    .article-banner {
+    .article-banner-large {
         max-height: 300px;
+        margin-top: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+    }
+
+    .article-banner-small {
+        max-height: 200px;
         margin-top: 20px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
         border-radius: 8px;
@@ -23,5 +28,4 @@
 .article-divider {
     margin-top: 20px;
     margin-bottom: 10px;
-    margin-right: 4%;
 }
