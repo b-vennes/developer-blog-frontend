@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleContent } from '../_models/article-content.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-resume',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResumeComponent implements OnInit {
 
-  constructor() { }
+  public resumeContent: ArticleContent;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.resumeContent = this.route.snapshot.data.contentData;
   }
 
 }

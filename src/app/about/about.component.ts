@@ -11,7 +11,7 @@ export class AboutComponent implements OnInit {
 
   public aboutContent: ArticleContent;
 
-  constructor(private route: ActivatedRoute ) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.aboutContent = this.route.snapshot.data.contentData;

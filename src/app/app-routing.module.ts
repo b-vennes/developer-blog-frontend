@@ -7,10 +7,12 @@ import { HomeComponent } from './home/home.component';
 import { HomeContentOverviewsResolver } from './_resolvers/home-content-overviews.resolver';
 import { ResumeComponent } from './resume/resume.component';
 import { AboutContentResolver } from './_resolvers/about-content.resolve';
+import { ResumeContentResolver } from './_resolvers/resume-content.resolver';
 
 
 const routes: Routes = [
   { path: 'about', component: AboutComponent, resolve: { contentData: AboutContentResolver } },
+  { path: 'resume', component: ResumeComponent, resolve: { contentData: ResumeContentResolver } },
   { path: 'article/about', redirectTo: '/about', pathMatch: 'full' },
   { path: 'article/resume', redirectTo: '/resume', pathMatch: 'full' },
   {
@@ -19,7 +21,6 @@ const routes: Routes = [
      resolve: { contentData: ArticleContentResolver }
   },
   { path: 'home', component: HomeComponent, resolve: { overviews: HomeContentOverviewsResolver } },
-  { path: 'resume', component: ResumeComponent },
   {
      path: '',
      redirectTo: '/home',

@@ -13,7 +13,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigatorComponent } from './navigator/navigator.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Routes, RouterModule } from '@angular/router';
 import { ContentDisplayComponent } from './content-display/content-display.component';
 import { ArticleComponent } from './article/article.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -24,6 +23,7 @@ import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
 import { HomeContentOverviewsResolver } from './_resolvers/home-content-overviews.resolver';
 import { AboutContentResolver } from './_resolvers/about-content.resolve';
+import { ResumeContentResolver } from './_resolvers/resume-content.resolver';
 
 @NgModule({
    declarations: [
@@ -53,7 +53,8 @@ import { AboutContentResolver } from './_resolvers/about-content.resolve';
       ContentService,
       ArticleContentResolver,
       HomeContentOverviewsResolver,
-      AboutContentResolver
+      AboutContentResolver,
+      ResumeContentResolver
    ],
    bootstrap: [
       AppComponent
