@@ -15,7 +15,6 @@ export class HomeContentOverviewsResolver implements Resolve<Array<ContentOvervi
             .pipe(
                 map(overviews => {
                     return overviews
-                        .filter(c => c.id !== 'about' && c.id !== 'resume')
                         .map(c => {
                             const overview = new ArticleOverview();
 
