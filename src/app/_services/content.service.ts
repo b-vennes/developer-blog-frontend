@@ -10,10 +10,10 @@ export class ContentService {
     constructor(private httpClient: HttpClient) {}
 
     public getContentData(id: string): Observable<ContentDataDto> {
-        return this.httpClient.get<ContentDataDto>(`${environment.baseApiUrl}/${id}`);
+        return this.httpClient.get<ContentDataDto>(`${environment.baseApiUrl}/content/${id}`);
     }
 
     public getContentOverviews(): Observable<Array<ContentOverviewDto>> {
-        return this.httpClient.get<Array<ContentOverviewDto>>(`${environment.baseApiUrl}`);
+        return this.httpClient.get<Array<ContentOverviewDto>>(`${environment.baseApiUrl}/content`);
     }
 }
