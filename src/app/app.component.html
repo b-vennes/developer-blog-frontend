@@ -1,9 +1,7 @@
-<app-navigator></app-navigator>
+<div class="mat-typography app-frame mat-app-background">
+    <app-navigator></app-navigator>
 
-<mat-sidenav-container class="page-container">
-    <mat-sidenav-content>
-        <div class="router-container" [ngClass.gt-sm]="'page-content-large'" [ngClass.lt-md]="'page-content-small'">
-            <router-outlet></router-outlet>
-        </div>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+    <div [ngClass.gt-sm]="'page-content-large'" [ngClass.lt-md]="'page-content-small'">
+        <router-outlet></router-outlet>
+    </div>
+</div>
