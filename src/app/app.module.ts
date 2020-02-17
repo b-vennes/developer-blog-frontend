@@ -26,6 +26,7 @@ import { HomeContentOverviewsResolver } from './_resolvers/home-content-overview
 import { AboutContentResolver } from './_resolvers/about-content.resolve';
 import { ResumeContentResolver } from './_resolvers/resume-content.resolver';
 import { SyntaxHighlightService } from './_services/syntax-highlight.service';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
    declarations: [
@@ -35,7 +36,8 @@ import { SyntaxHighlightService } from './_services/syntax-highlight.service';
       NavigatorComponent,
       AboutComponent,
       ContentDisplayComponent,
-      ResumeComponent
+      ResumeComponent,
+      FooterComponent
    ],
    imports: [
       BrowserModule,
