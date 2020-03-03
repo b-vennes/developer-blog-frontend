@@ -1,6 +1,6 @@
 <mat-toolbar color="primary" class="mat-elevation-z10 mat-tall">
   <span>
-    <button mat-button href="/home">
+    <button mat-button routerLink="/home">
       <h1 class="page-title">
         Branden Vennes
       </h1>
@@ -13,11 +13,11 @@
         <mat-icon class="dropdown-button">menu</mat-icon>
       </button>
       <mat-menu #menu="matMenu" class="dropdown-menu">
-        <button mat-menu-item href="/resume" class="dropdown-option">
+        <button mat-menu-item routerLink="/resume" class="dropdown-option">
           Resume
         </button>
         <mat-divider [inset]="true"></mat-divider>
-        <button mat-menu-item href="/about" class="dropdown-option">
+        <button mat-menu-item routerLink="/about" class="dropdown-option">
           About
         </button>
       </mat-menu>  

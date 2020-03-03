@@ -12,7 +12,7 @@
         <span *ngIf="articleContent.updatedDate">. Updated: {{articleContent.publishedDate | date}}</span>
     </div>
 
-    <img [ngClass.lt-md]="'article-banner-small'" [ngClass.gt-sm]="'article-banner-large'" src="{{articleContent.imageUrl}}">
+    <img *ngIf="articleContent.imageUrl" [ngClass.lt-md]="'article-banner-small'" [ngClass.gt-sm]="'article-banner-large'" src="{{articleContent.imageUrl}}">
 </div>
 
 <mat-divider class="article-divider"></mat-divider>
