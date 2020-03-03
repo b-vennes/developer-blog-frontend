@@ -5,4 +5,10 @@
 @import "~prismjs/themes/prism-okaidia";
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
+
+app-root {
+    background: #212121;
+    height: 100%;
+}

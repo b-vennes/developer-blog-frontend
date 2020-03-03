@@ -3,7 +3,7 @@
         About Me
     </h1>
 
-    <img [ngClass.lt-md]="'article-banner-small'" [ngClass.gt-sm]="'article-banner-large'" src="{{aboutContent.imageUrl}}">
+    <img *ngIf="aboutContent.imageUrl" [ngClass.lt-md]="'article-banner-small'" [ngClass.gt-sm]="'article-banner-large'" src="{{aboutContent.imageUrl}}">
 </div>
 
 <mat-divider class="article-divider"></mat-divider>
