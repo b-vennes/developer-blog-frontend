@@ -6,6 +6,11 @@
 
 <h2 class="medium-header">Recent Posts</h2>
 
+<div class="no-posts" *ngIf="articleOverviews.length === 0">
+    <p>No posts yet! For now, enjoy this picture of my dog wearing a cheeseburger.</p>
+    <img src="https://www.brandenvennes.com/images/cheeseburger.jpg">
+</div>
+
 <div class="overviews-grid">
     <div *ngFor="let overview of articleOverviews">
         <mat-card matRipple class="overview-card mat-elvation-z20" routerLink="/article/{{overview.id}}" onclick="">

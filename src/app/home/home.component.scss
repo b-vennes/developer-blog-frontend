@@ -13,6 +13,17 @@
     }
 }
 
+.no-posts {
+    font-family: 'Inconsolata', monospace;
+
+    img {
+        max-height: 300px;
+    }
+
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
 .overview-card {
     cursor: pointer;
     font-family: 'Inconsolata', monospace;
