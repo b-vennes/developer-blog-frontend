@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "dev-blog-frontend"
+  "defaultProject": "dev-blog-frontend",
+  "cli": {
+    "analytics": false
+  }
 }
