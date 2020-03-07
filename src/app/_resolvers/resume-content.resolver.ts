@@ -9,6 +9,6 @@ export class ResumeContentResolver implements Resolve<Post> {
     constructor(private readonly contentService: ContentService) {}
 
     resolve(): Observable<Post> {
-        return of(this.contentService.getAboutContent());
+        return of(this.contentService.getResumeContent());
     }
 }
