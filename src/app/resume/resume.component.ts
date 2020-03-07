@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleContent } from '../_models/article-content.model';
 import { ActivatedRoute } from '@angular/router';
+import { Post } from '../post.model';
 
 @Component({
   selector: 'app-resume',
@@ -8,13 +8,14 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./resume.component.scss']
 })
 export class ResumeComponent implements OnInit {
+  post: Post;
 
-  public resumeContent: ArticleContent;
+  postLocation: string;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.resumeContent = this.route.snapshot.data.contentData;
+    this.post = this.route.snapshot.data.post;
+    this.postLocation = `/assets/posts/${this.post.id}.md`;
   }
-
 }

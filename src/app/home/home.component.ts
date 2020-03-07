@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ArticleOverview } from '../_models/article-overview.model';
+import { Post } from '../post.model';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +8,11 @@ import { ArticleOverview } from '../_models/article-overview.model';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public articleOverviews: ArticleOverview[];
+  public posts: Post[];
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.articleOverviews = this.route.snapshot.data.overviews;
+    this.posts = this.route.snapshot.data.posts;
   }
 }

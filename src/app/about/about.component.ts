@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ArticleContent } from '../_models/article-content.model';
+import { Post } from '../post.model';
 
 @Component({
   selector: 'app-about',
@@ -8,13 +8,14 @@ import { ArticleContent } from '../_models/article-content.model';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
+  post: Post;
 
-  public aboutContent: ArticleContent;
+  postLocation: string;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.aboutContent = this.route.snapshot.data.contentData;
+    this.post = this.route.snapshot.data.post;
+    this.postLocation = `/assets/posts/${this.post.id}.md`;
   }
-
 }

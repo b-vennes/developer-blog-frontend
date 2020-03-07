@@ -9,6 +9,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatRippleModule } from '@angular/material/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MarkdownModule } from 'ngx-markdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,18 +17,15 @@ import { NavigatorComponent } from './navigator/navigator.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContentDisplayComponent } from './content-display/content-display.component';
 import { ArticleComponent } from './article/article.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ArticleContentResolver } from './_resolvers/article-content.resolver';
-import { ContentService } from './_services/content.service';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
 import { HomeContentOverviewsResolver } from './_resolvers/home-content-overviews.resolver';
 import { AboutContentResolver } from './_resolvers/about-content.resolve';
 import { ResumeContentResolver } from './_resolvers/resume-content.resolver';
-import { SyntaxHighlightService } from './_services/syntax-highlight.service';
 import { FooterComponent } from './footer/footer.component';
-import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
    declarations: [
@@ -54,11 +52,9 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
       MatRippleModule,
       FlexLayoutModule,
       HttpClientModule,
-      ScullyLibModule
+      MarkdownModule.forRoot({ loader: HttpClient })
    ],
    providers: [
-      ContentService,
-      SyntaxHighlightService,
       ArticleContentResolver,
       HomeContentOverviewsResolver,
       AboutContentResolver,

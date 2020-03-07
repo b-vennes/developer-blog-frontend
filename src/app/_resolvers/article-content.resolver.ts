@@ -1,33 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
-import { ContentService } from '../_services/content.service';
-import { ArticleContent } from '../_models/article-content.model';
+import { Post } from '../post.model';
+import { PostList } from '../posts.list';
 
 @Injectable()
-export class ArticleContentResolver implements Resolve<ArticleContent> {
+export class ArticleContentResolver implements Resolve<Post> {
+    resolve(route: ActivatedRouteSnapshot): Observable<Post> {
+        const postId = route.paramMap.get('id');
 
-    constructor(private contentService: ContentService) {}
+        const posts = PostList.filter(list => list.id === postId);
 
-    resolve(route: ActivatedRouteSnapshot): Observable<ArticleContent> {
-        const contentId = route.paramMap.get('id');
+        if (posts.length !== 1) {
+            return of(null);
+        }
 
-        return this.contentService.getContentData(contentId)
-            .pipe(
-                map(c => {
-                    const articleContent = new ArticleContent();
-
-                    articleContent.id = c.id;
-                    articleContent.title = c.title;
-                    articleContent.summary = c.summary;
-                    articleContent.imageUrl = c.imageUrl;
-                    articleContent.data = c.data;
-                    articleContent.publishedDate = c.publishedDate;
-                    articleContent.updatedDate = c.updatedDate;
-
-                    return articleContent;
-                })
-            );
+        return of(posts[0]);
     }
 }
