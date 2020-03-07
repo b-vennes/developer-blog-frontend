@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "scully": "scully",
+    "scully:serve": "scully serve"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +24,9 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "@scullyio/init": "0.0.23",
+    "@scullyio/ng-lib-v8": "latest",
+    "@scullyio/scully": "latest",
     "hammerjs": "^2.0.8",
     "prismjs": "^1.19.0",
     "rxjs": "~6.4.0",

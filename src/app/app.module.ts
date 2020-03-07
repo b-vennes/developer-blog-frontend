@@ -27,6 +27,7 @@ import { AboutContentResolver } from './_resolvers/about-content.resolve';
 import { ResumeContentResolver } from './_resolvers/resume-content.resolver';
 import { SyntaxHighlightService } from './_services/syntax-highlight.service';
 import { FooterComponent } from './footer/footer.component';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
    declarations: [
@@ -52,7 +53,8 @@ import { FooterComponent } from './footer/footer.component';
       MatDividerModule,
       MatRippleModule,
       FlexLayoutModule,
-      HttpClientModule
+      HttpClientModule,
+      ScullyLibModule
    ],
    providers: [
       ContentService,
