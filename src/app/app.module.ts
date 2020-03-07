@@ -26,6 +26,7 @@ import { HomeContentOverviewsResolver } from './_resolvers/home-content-overview
 import { AboutContentResolver } from './_resolvers/about-content.resolve';
 import { ResumeContentResolver } from './_resolvers/resume-content.resolver';
 import { FooterComponent } from './footer/footer.component';
+import { ContentService } from './_services/content.service';
 
 @NgModule({
    declarations: [
@@ -58,7 +59,8 @@ import { FooterComponent } from './footer/footer.component';
       ArticleContentResolver,
       HomeContentOverviewsResolver,
       AboutContentResolver,
-      ResumeContentResolver
+      ResumeContentResolver,
+      ContentService
    ],
    bootstrap: [
       AppComponent

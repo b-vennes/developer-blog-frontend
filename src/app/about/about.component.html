@@ -3,10 +3,10 @@
         About Me
     </h1>
 
-    <img *ngIf="post.image" [ngClass.lt-md]="'article-banner-small'" [ngClass.gt-sm]="'article-banner-large'" src="{{post.image}}">
+    <img *ngIf="content.image" [ngClass.lt-md]="'article-banner-small'" [ngClass.gt-sm]="'article-banner-large'" src="{{content.image}}">
 </div>
 
 <mat-divider class="article-divider"></mat-divider>
 
-<app-content-display class="article-content" [contentPath]="postLocation">
+<app-content-display class="article-content" [contentPath]="content.location">
 </app-content-display>

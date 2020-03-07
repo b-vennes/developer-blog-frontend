@@ -1,18 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Resolve } from '@angular/router';
-import { PostList } from '../posts.list';
-import { Post } from '../post.model';
+import { Post } from '../_posts/post.model';
+import { ContentService } from '../_services/content.service';
 
 @Injectable()
 export class AboutContentResolver implements Resolve<Post> {
+
+    constructor(private readonly contentService: ContentService) {}
+
     resolve(): Observable<Post> {
-        const posts = PostList.filter(list => list.id === 'about');
-
-        if (posts.length !== 1) {
-            return of(null);
-        }
-
-        return of(posts[0]);
+        return of(this.contentService.getAboutContent());
     }
 }
