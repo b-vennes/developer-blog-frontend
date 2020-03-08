@@ -20,11 +20,11 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
       with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        repo-token: ${{ secrets.GH_TOKEN }}
 
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v1.1.0
     
     - run: npm install
-    - run: npm i @angular/cli
-    - run: ng deploy
+    - run: npm install @angular/cli
+    - run: npm run deploy -- --cname=brandenvennes.com
