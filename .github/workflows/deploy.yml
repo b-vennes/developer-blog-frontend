@@ -26,4 +26,5 @@ jobs:
       uses: actions/setup-node@v1.1.0
     
     - run: npm install
+    - run: npm i @angular/cli
     - run: ng deploy
