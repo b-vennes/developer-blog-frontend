@@ -1,29 +1,37 @@
-# Developer Blog Frontend
+# Branden Vennes's Developer Blog
 
-This project is the frontend for my developer blog site, although, I think it is generic enough that anyone could combine the code from this repository and my [Developer Blog Backend](https://github.com/b-vennes/developer-blog-backend) repository to build their own blogs.
+This repository contains an Angular SPA which runs my [Developer Blog](https://brandenvennes.com).
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To run the application, you will need the [Angular CLI](https://cli.angular.io/), [NPM](https://www.npmjs.com/get-npm), and [Node](https://nodejs.org/en/) installed.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Run
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Running end-to-end tests
+## Adding Blog Posts
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+In order to add a blog post, you'll first want to add a new markdown file to the `src/assets/drafts` folder.  Then, add a new reference to that post into the `src/app/_posts/draft-posts.list.ts` file. It will look something like this:
 
-## Further help
+``` typescript
+{
+    id: 'test-post', // the id field will match the name of your markdown file without the .md extension
+    title: 'Test Title',
+    date: new Date(2001, 1, 1),
+    summary: 'test summary',
+    image: '/assets/images/test.jpg'
+}
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The drafts folder will be used when running Angular in non-production mode. To display blog posts in production mode, add posts to the `src/assets/posts` folder and references in the`src/app/_posts/posts.list.ts` file.
+
+## Resume Page
+
+To add a resume, create a markdown file at `src/assets/resume.md`. You do not need to then add a reference to it in the `src/app/_posts/posts.list.ts` file.
+
+## About Page
+
+To add a resume, create a markdown file at `src/assets/about.md`. You do not need to then add a reference to it in the `src/app/_posts/posts.list.ts` file.

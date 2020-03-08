@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleContent } from '../_models/article-content.model';
+import { Post } from '../_posts/post.model';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -8,13 +8,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./resume.component.scss']
 })
 export class ResumeComponent implements OnInit {
+  content: Post;
 
-  public resumeContent: ArticleContent;
-
-  constructor(private route: ActivatedRoute) { }
+  constructor(private readonly route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.resumeContent = this.route.snapshot.data.contentData;
+    this.content = this.route.snapshot.data.content;
   }
-
 }
