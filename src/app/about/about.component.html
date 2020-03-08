@@ -1,12 +1,12 @@
 <div class="article-header">
     <h1 class="article-title">
-        About Me
+        About
     </h1>
 
-    <img *ngIf="aboutContent.imageUrl" [ngClass.lt-md]="'article-banner-small'" [ngClass.gt-sm]="'article-banner-large'" src="{{aboutContent.imageUrl}}">
+    <img *ngIf="content.image" [ngClass.lt-md]="'article-banner-small'" [ngClass.gt-sm]="'article-banner-large'" src="{{content.image}}">
 </div>
 
 <mat-divider class="article-divider"></mat-divider>
 
-<app-content-display class="article-content" [contentData]="this.aboutContent.data">
+<app-content-display class="article-content" [contentPath]="content.location">
 </app-content-display>

@@ -1,21 +1,20 @@
 <div class="article-header">
     <h1 class="article-title">
-        {{articleContent.title}}
+        {{content.title}}
     </h1>
 
     <p class="article-subtitle">
-        {{articleContent.summary}}
+        {{content.summary}}
     </p>
 
     <div class="article-dates">
-        <span *ngIf="articleContent.publishedDate">Published: {{articleContent.publishedDate | date}}</span>
-        <span *ngIf="articleContent.updatedDate">. Updated: {{articleContent.publishedDate | date}}</span>
+        <span>{{content.date | date}}</span>
     </div>
 
-    <img *ngIf="articleContent.imageUrl" [ngClass.lt-md]="'article-banner-small'" [ngClass.gt-sm]="'article-banner-large'" src="{{articleContent.imageUrl}}">
+    <img *ngIf="content.image" [ngClass.lt-md]="'article-banner-small'" [ngClass.gt-sm]="'article-banner-large'" src="{{content.image}}">
 </div>
 
 <mat-divider class="article-divider"></mat-divider>
 
-<app-content-display class="article-content" [contentData]="this.articleContent.data">
+<app-content-display class="article-content" [contentPath]="content.location">
 </app-content-display>

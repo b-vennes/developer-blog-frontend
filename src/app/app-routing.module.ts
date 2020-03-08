@@ -11,16 +11,16 @@ import { ResumeContentResolver } from './_resolvers/resume-content.resolver';
 
 
 const routes: Routes = [
-  { path: 'about', component: AboutComponent, resolve: { contentData: AboutContentResolver } },
-  { path: 'resume', component: ResumeComponent, resolve: { contentData: ResumeContentResolver } },
+  { path: 'about', component: AboutComponent, resolve: { content: AboutContentResolver } },
+  { path: 'resume', component: ResumeComponent, resolve: { content: ResumeContentResolver } },
   { path: 'article/about', redirectTo: '/about', pathMatch: 'full' },
   { path: 'article/resume', redirectTo: '/resume', pathMatch: 'full' },
   {
      path: 'article/:id',
      component: ArticleComponent,
-     resolve: { contentData: ArticleContentResolver }
+     resolve: { content: ArticleContentResolver }
   },
-  { path: 'home', component: HomeComponent, resolve: { overviews: HomeContentOverviewsResolver } },
+  { path: 'home', component: HomeComponent, resolve: { posts: HomeContentOverviewsResolver } },
   {
      path: '',
      redirectTo: '/home',

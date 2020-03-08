@@ -6,10 +6,15 @@
 
 <h2 class="medium-header">Recent Posts</h2>
 
+<div class="no-posts" *ngIf="posts.length === 0">
+    <p>No posts yet! For now, enjoy this picture of my dog wearing a cheeseburger.</p>
+    <img src="https://www.brandenvennes.com/images/cheeseburger.jpg">
+</div>
+
 <div class="overviews-grid">
-    <div *ngFor="let overview of articleOverviews">
+    <div *ngFor="let overview of posts">
         <mat-card matRipple class="overview-card mat-elvation-z20" routerLink="/article/{{overview.id}}" onclick="">
-            <img mat-card-lg-image class="overview-image" src="{{overview.imageUrl}}">
+            <img mat-card-lg-image class="overview-image" src="{{overview.image}}">
             <mat-card-header>
                 <mat-card-title-group>
                     <mat-card-title class="overview-title">
@@ -19,8 +24,7 @@
                     </mat-card-title>
                     <mat-card-subtitle class="overview-subtitle">{{overview.summary}}</mat-card-subtitle>
                     <mat-card-subtitle class="overview-dates">
-                        <span *ngIf="overview.publishedDate">Published: {{overview.publishedDate | date}}</span>
-                        <span *ngIf="overview.updatedDate">. Updated: {{overview.publishedDate | date}}</span>
+                        <span>{{overview.date | date}}</span>
                     </mat-card-subtitle>
                 </mat-card-title-group>
             </mat-card-header>

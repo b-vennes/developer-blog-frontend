@@ -1,19 +1,49 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { ContentDataDto } from '../_dtos/content-data.dto';
-import { ContentOverviewDto } from '../_dtos/content-overview.dto';
-import { environment } from 'src/environments/environment';
+import { Post } from '../_posts/post.model';
+import { environment } from '../../environments/environment';
+import { PostsList } from '../_posts/posts.list';
+import { DraftPostsList } from '../_posts/draft-posts.list';
 
 @Injectable()
 export class ContentService {
-    constructor(private httpClient: HttpClient) {}
+    getContentInfo(id: string): Post {
+        const postsList = environment.production ? PostsList : DraftPostsList;
 
-    public getContentData(id: string): Observable<ContentDataDto> {
-        return this.httpClient.get<ContentDataDto>(`${environment.baseApiUrl}/content/${id}`);
+        const posts = postsList.filter(list => list.id === id);
+
+        if (posts.length !== 1) {
+            return null;
+        }
+
+        const post = posts[0];
+
+        if (environment.production) {
+            post.location = `/assets/posts/${id}.md`;
+        } else {
+            post.location = `/assets/drafts/${id}.md`;
+        }
+
+        return post;
     }
 
-    public getContentOverviews(): Observable<Array<ContentOverviewDto>> {
-        return this.httpClient.get<Array<ContentOverviewDto>>(`${environment.baseApiUrl}/content`);
+    getPosts(): Array<Post> {
+        if (environment.production) {
+            return PostsList;
+        } else {
+            return DraftPostsList;
+        }
+    }
+
+    getAboutContent(): Post {
+        return {
+            image: null,
+            location: '/assets/posts/about.md'
+        };
+    }
+
+    getResumeContent(): Post {
+        return {
+            location: '/assets/posts/resume.md'
+        };
     }
 }
