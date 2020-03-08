@@ -28,3 +28,5 @@ jobs:
     - run: npm install
     - run: npm install @angular/cli
     - run: npm run deploy -- --cname=brandenvennes.com --no-silent --name="b-vennes" --email=b.n.vennes@gmail.com
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
