@@ -1,11 +1,11 @@
 import { Post } from './post.model';
 
 export const DraftPostsList: Array<Post> = [
-    // {
-    //     id: 'test-post',
-    //     title: 'Test Title',
-    //     date: new Date(2001, 1, 1),
-    //     summary: 'test summary',
-    //     image: '/assets/images/test.jpg'
-    // }
+    {
+        id: 'year-in-review',
+        title: 'Looking Back At My First Year In Development',
+        date: new Date(2020, 2, 8),
+        summary: 'What I\'ve learned after a year working on software.',
+        image: '/assets/draft-images/2019.jpg'
+    }
 ];
