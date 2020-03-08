@@ -1,3 +1,5 @@
+![Deployment](https://github.com/b-vennes/developer-blog/workflows/CI/badge.svg)
+
 # Branden Vennes's Developer Blog
 
 This repository contains an Angular SPA which runs my [Developer Blog](https://brandenvennes.com).
