@@ -1,0 +1,25 @@
+.image-attribute-container {
+
+    margin-top: 10px;
+
+    a {
+        background-color:black;
+        text-decoration:none;
+        padding:4px 6px;
+        display: inline-block;
+        border-radius: 3px;
+    }
+
+    .unsplash-logo {
+        display:inline-block;
+        padding:2px 3px
+    }
+
+    .attribute-name {
+        color:white;
+        font-family:-apple-system, BlinkMacSystemFont,"San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 1.2;
+    }
+}

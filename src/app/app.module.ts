@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title, Meta } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -27,6 +27,7 @@ import { AboutContentResolver } from './_resolvers/about-content.resolve';
 import { ResumeContentResolver } from './_resolvers/resume-content.resolver';
 import { FooterComponent } from './footer/footer.component';
 import { ContentService } from './_services/content.service';
+import { ImageAttributeComponent } from './image-attribute/image-attribute.component';
 
 @NgModule({
    declarations: [
@@ -37,7 +38,8 @@ import { ContentService } from './_services/content.service';
       AboutComponent,
       ContentDisplayComponent,
       ResumeComponent,
-      FooterComponent
+      FooterComponent,
+      ImageAttributeComponent
    ],
    imports: [
       BrowserModule,
@@ -60,7 +62,9 @@ import { ContentService } from './_services/content.service';
       HomeContentOverviewsResolver,
       AboutContentResolver,
       ResumeContentResolver,
-      ContentService
+      ContentService,
+      Title,
+      Meta
    ],
    bootstrap: [
       AppComponent
