@@ -27,6 +27,7 @@ import { AboutContentResolver } from './_resolvers/about-content.resolve';
 import { ResumeContentResolver } from './_resolvers/resume-content.resolver';
 import { FooterComponent } from './footer/footer.component';
 import { ContentService } from './_services/content.service';
+import { ImageAttributeComponent } from './image-attribute/image-attribute.component';
 
 @NgModule({
    declarations: [
@@ -37,7 +38,8 @@ import { ContentService } from './_services/content.service';
       AboutComponent,
       ContentDisplayComponent,
       ResumeComponent,
-      FooterComponent
+      FooterComponent,
+      ImageAttributeComponent
    ],
    imports: [
       BrowserModule,

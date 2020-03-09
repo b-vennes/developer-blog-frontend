@@ -9,5 +9,9 @@ export class Post {
 
     image?: string;
 
+    imageAttributeUrl?: string;
+
+    imageAttributeName?: string;
+
     location?: string;
 }

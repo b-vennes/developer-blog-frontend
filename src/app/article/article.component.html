@@ -12,6 +12,8 @@
     </div>
 
     <img *ngIf="content.image" [ngClass.lt-md]="'article-banner-small'" [ngClass.gt-sm]="'article-banner-large'" src="{{content.image}}">
+
+    <app-image-attribute [attributeUrl]="content.imageAttributeUrl" [attributeName]="content.imageAttributeName"></app-image-attribute>
 </div>
 
 <mat-divider class="article-divider"></mat-divider>
