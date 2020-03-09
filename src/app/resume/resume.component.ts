@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../_posts/post.model';
 import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-resume',
@@ -10,9 +11,10 @@ import { ActivatedRoute } from '@angular/router';
 export class ResumeComponent implements OnInit {
   content: Post;
 
-  constructor(private readonly route: ActivatedRoute) {}
+  constructor(private readonly route: ActivatedRoute, private readonly titleService: Title) {}
 
   ngOnInit() {
     this.content = this.route.snapshot.data.content;
+    this.titleService.setTitle(`Branden Vennes | Resume`);
   }
 }
