@@ -14,4 +14,6 @@ export class Post {
     imageAttributeName?: string;
 
     location?: string;
+
+    tags?: Array<string>;
 }

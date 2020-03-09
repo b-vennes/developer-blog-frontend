@@ -8,6 +8,7 @@ export const DraftPostsList: Array<Post> = [
         summary: 'What I\'ve learned after a year working on software.',
         image: '/assets/draft-images/reflection.jpg',
         imageAttributeUrl: 'https://unsplash.com/@garrettpsystems?utm_medium=referral&utm_campaign=photographer-credit&utm_content=creditBadge',
-        imageAttributeName: 'garrett parker'
+        imageAttributeName: 'garrett parker',
+        tags: ['software', 'development', 'web', 'post']
     }
 ];

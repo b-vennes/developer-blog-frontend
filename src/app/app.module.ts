@@ -1,4 +1,4 @@
-import { BrowserModule, Title } from '@angular/platform-browser';
+import { BrowserModule, Title, Meta } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -63,7 +63,8 @@ import { ImageAttributeComponent } from './image-attribute/image-attribute.compo
       AboutContentResolver,
       ResumeContentResolver,
       ContentService,
-      Title
+      Title,
+      Meta
    ],
    bootstrap: [
       AppComponent
