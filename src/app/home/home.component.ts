@@ -23,6 +23,6 @@ export class HomeComponent implements OnInit {
 
     this.metaService.updateTag({ name: 'description', content: 'Branden Vennes\'s software development blog' });
     this.metaService.updateTag({ name: 'author', content: 'Branden Vennes' });
-    this.metaService.updateTag({ name: 'keywords', content: 'Software, Development, Full-Stack, Blog, Web' });
+    this.metaService.updateTag({ name: 'keywords', content: 'Software, Development, Full-Stack, Blog' });
   }
 }
