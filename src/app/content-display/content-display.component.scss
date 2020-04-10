@@ -17,4 +17,9 @@
             cursor: pointer;
         }
     }
+
+    code {
+        color: $inline-code-color;
+        font-family: $inline-code-font;
+    }
 }

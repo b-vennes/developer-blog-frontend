@@ -1,4 +1,4 @@
-Hi there! My name is Branden Vennes and I am a full-stack software developer at a midsize software company in Portlant, Oregon.
+Hi there! My name is Branden Vennes and I am a full-stack software developer at a midsize software company in Portland, Oregon.
 
 I put this blog together to help me reflect on new skills and technologies I come across. I also hope to give reviews of books, chat about something I find interesting, or throw my opinion into the web.
 

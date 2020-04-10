@@ -27,3 +27,6 @@ $app-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
 $primary: mat-color($app-primary);
 $accent: mat-color($app-accent);
 $warn: mat-color($app-warn);
+
+$inline-code-color: #e6db74;
+$inline-code-font: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
