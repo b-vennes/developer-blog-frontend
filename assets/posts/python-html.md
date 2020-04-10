@@ -89,7 +89,7 @@ Before testing this class out, let's setup the full `html_builder` Python packag
 
 First, create a new directory called _html_builder_.
 
-Add a blank file within this directory called _\_\_init\_\_.py_
+Add a blank file within this directory called \_\_init\_\_.py
 
 Add a subdirectory to _html_builder_ also called _html_builder_.
 
