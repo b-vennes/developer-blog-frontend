@@ -18,8 +18,11 @@
         }
     }
 
-    code {
-        color: $inline-code-color;
-        font-family: $inline-code-font;
+    // don't want to override code blocks
+    :not(pre) {
+        code {
+            color: $inline-code-color;
+            font-family: $inline-code-font;
+        }
     }
 }
